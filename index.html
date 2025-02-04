@@ -5,28 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Links</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            position: relative;
         }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .dropbtn {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropbtn:hover {
+            background-color: #005bb5;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Container Styles */
         .container {
             text-align: center;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .profile-img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             margin-bottom: 20px;
         }
+
         .link {
             display: block;
             margin: 10px 0;
@@ -37,12 +91,25 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
+
         .link:hover {
             background-color: #005bb5;
         }
     </style>
 </head>
 <body>
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+        <button class="dropbtn">Contact Me</button>
+        <div class="dropdown-content">
+            <a href="mailto:example@example.com">Email</a>
+            <a href="https://wa.me/1234567890">WhatsApp</a>
+            <a href="https://t.me/yourusername">Telegram</a>
+            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
     <div class="container">
         <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-img">
         <h1>Chandra Varma</h1>
