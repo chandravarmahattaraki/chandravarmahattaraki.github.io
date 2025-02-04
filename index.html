@@ -72,7 +72,7 @@
         .image-section {
             background: url('https://t4.ftcdn.net/jpg/03/21/43/07/360_F_321430761_qQi0CU9tzI5w1k1vJgdA02LMtXtsXvJE.jpg');
             background-size: cover;
-            background-position: center down;
+            background-position: center;
             min-height: 300px; /* Adjust height as needed */
             display: flex;
             align-items: center;
@@ -85,6 +85,29 @@
         .services {
             padding: 50px 20px;
             text-align: center;
+            background: url('https://t4.ftcdn.net/jpg/03/21/43/07/360_F_321430761_qQi0CU9tzI5w1k1vJgdA02LMtXtsXvJE.jpg'); /* Background Image */
+            background-size: cover;
+            background-position: center bottom; /* Centered at the bottom */
+            background-repeat: no-repeat;
+            position: relative;
+            color: white; /* Ensure text is readable */
+        }
+
+        .services::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+            z-index: 1;
+        }
+
+        .services h2,
+        .service-cards {
+            position: relative;
+            z-index: 2;
         }
 
         .services h2 {
@@ -101,14 +124,13 @@
 
         .service-card {
             background-color: white;
-            background-size: cover;
-            background-position: center down;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 300px;
             padding: 20px;
             text-align: left;
             transition: transform 0.3s ease;
+            color: black;
         }
 
         .service-card:hover {
