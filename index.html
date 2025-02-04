@@ -54,19 +54,21 @@
 
         /* Hero Section Styles */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://github.com/chandravarmahattaraki/cv/blob/main/Images/chandravarma_name_log.jpeg?raw=true');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://github.com/chandravarmahattaraki/cv/blob/main/Images/chandravarma_name_log.jpeg?raw=true');
+            background-size: contain; /* Make the image smaller */
+            background-repeat: no-repeat;
+            background-position: center top;
             color: white;
             text-align: center;
-            padding: 100px 20px;
-            min-height: 300px; /* Ensure the section doesn't collapse */
+            padding: 80px 20px; /* Reduce padding */
+            min-height: 200px; /* Adjust height */
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* Third Section (New Image Section) */
+        /* Image Section (Below Hero Section) */
         .image-section {
             background: url('https://t4.ftcdn.net/jpg/03/21/43/07/360_F_321430761_qQi0CU9tzI5w1k1vJgdA02LMtXtsXvJE.jpg');
             background-size: cover;
@@ -157,7 +159,7 @@
         <!-- Empty section with no content -->
     </section>
 
-    <!-- Third Section (New Image Section) -->
+    <!-- Image Section (New Section Below Hero) -->
     <section class="image-section">
         <!-- You can add content here if needed -->
     </section>
