@@ -54,21 +54,20 @@
 
         /* Hero Section Styles */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('https://github.com/chandravarmahattaraki/cv/blob/main/Images/chandravarma_name_log.jpeg?raw=true');
-            background-size: cover; /* Make the image smaller */
-            background-repeat: no-repeat;
-            background-position: center top;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://github.com/chandravarmahattaraki/cv/blob/main/Images/chandravarma_name_log.jpeg?raw=true');
+            background-size: contain; /* Make the image smaller and fit within the section */
+            background-position: center;
+            background-repeat: no-repeat; /* Prevent the image from repeating */
             color: white;
             text-align: center;
-            padding: 80px 20px; /* Reduce padding */
-            min-height: 200px; /* Adjust height */
+            padding: 100px 20px;
+            min-height: 200px; /* Reduce the height to make the image smaller */
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* Image Section (Below Hero Section) */
+        /* Third Section (New Image Section) */
         .image-section {
             background: url('https://t4.ftcdn.net/jpg/03/21/43/07/360_F_321430761_qQi0CU9tzI5w1k1vJgdA02LMtXtsXvJE.jpg');
             background-size: cover;
@@ -85,29 +84,6 @@
         .services {
             padding: 50px 20px;
             text-align: center;
-            background: url('https://t4.ftcdn.net/jpg/03/21/43/07/360_F_321430761_qQi0CU9tzI5w1k1vJgdA02LMtXtsXvJE.jpg'); /* Background Image */
-            background-size: cover;
-            background-position: center bottom; /* Centered at the bottom */
-            background-repeat: no-repeat;
-            position: relative;
-            color: white; /* Ensure text is readable */
-        }
-
-        .services::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
-            z-index: 1;
-        }
-
-        .services h2,
-        .service-cards {
-            position: relative;
-            z-index: 2;
         }
 
         .services h2 {
@@ -130,7 +106,6 @@
             padding: 20px;
             text-align: left;
             transition: transform 0.3s ease;
-            color: black;
         }
 
         .service-card:hover {
@@ -183,7 +158,7 @@
         <!-- Empty section with no content -->
     </section>
 
-    <!-- Image Section (New Section Below Hero) -->
+    <!-- Third Section (New Image Section) -->
     <section class="image-section">
         <!-- You can add content here if needed -->
     </section>
