@@ -25,34 +25,44 @@
             color: white;
             padding: 15px 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Logo stays on left */
             align-items: center;
+            position: relative; /* Allows absolute positioning inside */
         }
 
-        .navbar .logo {
-            font-size: 24px;
-            font-weight: bold;
+        .navbar .logo img {
+            width: 40px; /* Adjust the width as needed */
+            height: 40px; /* Set the height same as width to maintain a square shape */
+            border-radius: 50%; /* Makes the image round */
+            object-fit: cover; /* Ensures the image fits the circular shape */
         }
 
-        .navbar .nav-links {
+        .nav-links {
             list-style: none;
             display: flex;
             gap: 20px;
-            margin: 0;
             padding: 0;
+            margin: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Centers navigation links */
         }
 
-        .navbar .nav-links a {
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
             color: white;
             font-size: 16px;
             transition: color 0.3s ease;
         }
 
-        .navbar .nav-links a:hover {
+        .nav-links a:hover {
             color: #0073e6;
         }
 
-        /* Hero Section Styles */
+        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://github.com/chandravarmahattaraki/cv/blob/main/Images/chandravarma_name_log.jpeg?raw=true');
             background-size: cover;
@@ -62,12 +72,12 @@
             padding: 100px 20px;
         }
 
-        /* Middle Section Styles */
+        /* Middle Section */
         .middle-section {
             background: url('https://t4.ftcdn.net/jpg/03/21/43/07/360_F_321430761_qQi0CU9tzI5w1k1vJgdA02LMtXtsXvJE.jpg');
             background-size: cover;
             background-position: center;
-            min-height: 1200px; /* Adjust height as needed */
+            min-height: 1200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -75,7 +85,7 @@
             text-align: center;
         }
 
-        /* Services Section Styles */
+        /* Services Section */
         .services {
             padding: 100px 20px;
             text-align: center;
@@ -107,11 +117,6 @@
             transform: translateY(-10px);
         }
 
-        .service-card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
         .service-card h3 {
             font-size: 24px;
             margin: 20px 0 10px;
@@ -122,7 +127,7 @@
             color: #666;
         }
 
-        /* Footer Styles */
+        /* Footer */
         .footer {
             background-color: #333;
             color: white;
@@ -130,16 +135,15 @@
             padding: 20px;
             margin-top: 50px;
         }
-
-        .footer p {
-            margin: 0;
-        }
     </style>
 </head>
 <body>
+
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">Chandravarma Hattaraki</div>
+        <div class="logo">
+            <img src="https://i.pinimg.com/280x280_RS/e0/80/7d/e0807de2f8b2915d5087fb53a4b280bc.jpg" alt="CV">
+        </div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#">Services</a></li>
@@ -164,17 +168,14 @@
     <section class="services">
         <h2>What We Offer</h2>
         <div class="service-cards">
-            <!-- Service Card 1 -->
             <div class="service-card">
                 <h3>Web Development</h3>
                 <p>We build responsive and user-friendly websites tailored to your business needs.</p>
             </div>
-            <!-- Service Card 2 -->
             <div class="service-card">
                 <h3>Cybersecurity</h3>
                 <p>Protect your business from cyber threats with our advanced security solutions.</p>
             </div>
-            <!-- Service Card 3 -->
             <div class="service-card">
                 <h3>Cloud Solutions</h3>
                 <p>Scalable and secure cloud services to power your business operations.</p>
@@ -186,5 +187,6 @@
     <footer class="footer">
         <p>&copy; 2023 My Website. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
