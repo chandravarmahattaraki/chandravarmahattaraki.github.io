@@ -35,14 +35,14 @@
             height: 80px; /* Set the height same as width to maintain a square shape */
             border-radius: 50%; /* Makes the image round */
             object-fit: cover; /* Ensures the image fits the circular shape */
-            padding-left: 20px;  /* Adjust left padding to move the logo to the right */
-            padding-right: 20px; /* Adjust right padding to move the logo to the left */
+            padding-left: 300px;  /* Adjust left padding to move the logo to the right */
+            padding-right: 300px; /* Adjust right padding to move the logo to the left */
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 50px;
             padding: 0;
             margin: 0;
             position: absolute;
@@ -82,7 +82,7 @@
             top: 100%; /* Position below the menu item */
             left: 0;
             padding: 10px 0;
-            min-width: 180px;
+            min-width: 300px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             opacity: 0; /* Initially hidden */
             transform: translateY(-20px); /* Start slightly above */
@@ -236,9 +236,45 @@
             padding: 20px;
             margin-top: 50px;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .service-card {
+                width: 45%;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
     </style>
 </head>
-
 <body>
     <!-- Navbar -->
     <nav class="navbar">
@@ -279,8 +315,10 @@
                     About
                 </a>
                 <div class="dropdown">
-                    <a href="about-option1.html">About author</a> <!-- Redirect to About Option 1 page -->
+                    <a href="about-option1.html">About Us</a> <!-- Redirect to About Option 1 page -->
                     <a href="about-option2.html">About Pentesting</a> <!-- Redirect to About Option 2 page -->
+                    <a href="about-option4.html">About Bug Bounty Reports</a>
+                    <a href="about-option4.html">About recent threats and vulnerabilities</a>
                 </div>
             </li>
             <li>
@@ -293,22 +331,18 @@
                 </a>
                 </div>
             </li>
-            
-        
-        <li>
-            <div class="hamburger" id="hamburger-menu">
-                <!-- Menu Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="white"/>
-                </svg>
-            </div>
-            <div class="hamburger-dropdown">
-                <a href="option1.html">Option 1</a>
-                <a href="option2.html">Option 2</a>
-                <a href="option3.html">Option 3</a>
-            </div>
-        </li>
-    </ul>
+            <li>
+                <div class="hamburger" id="hamburger-menu">
+                    <!-- Menu Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="hamburger-dropdown">
+                    <a href="option1.html">Login Console</a>
+                </div>
+            </li>
+        </ul>
     </nav>
 
     <!-- Hero Section -->
@@ -323,7 +357,7 @@
                 <source src="https://raw.githubusercontent.com/chandravarmahattaraki/cv/main/videos/videoplayback.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="overlay-content" style="position: relative; z-index: 2; color: white; padding: 50px; margin-top: -200px; text-align: left; max-width: 800px;">
+            <div class="overlay-content" style="position: relative; z-index: 2; color: white; padding: 50px; margin-top: -200px; text-align: left; max-width: 600px;">
                 <h1 style="font-size: 100px; font-weight: bold; margin: 0;">CV</h1>
                 <p style="font-size: 20px; margin: 0;">Passionate about cybersecurity and technologies, we specialize in network penetration testing, web application security, and bug bounty hunting constantly learning, testing, and securing the digital world.</p>
             </div>
