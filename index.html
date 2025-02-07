@@ -19,6 +19,17 @@
             text-decoration: none;
             color: inherit;
         }
+            #snowCanvas {
+            position: fixed;
+            top: -10px;
+            color: white;
+            opacity: 0.4; /* Reduced brightness */
+            font-size: 10px;
+            user-select: none;
+            animation-name: snowfall;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
 
        /* Navbar Styles */
         .navbar {
@@ -295,6 +306,68 @@
     <footer class="footer">
         <p>&copy; My Website. All rights reserved.</p>
     </footer>
+    
+    <!-- Snow falling effect -->
+    <canvas id="snowCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById("snowCanvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const snowflakes = [];
+
+        function createSnowflakes() {
+            for (let i = 0; i < 100; i++) {
+                snowflakes.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 4 + 1,
+                    speedY: Math.random() * 3 + 1,
+                    speedX: Math.random() * 2 - 1
+                });
+            }
+        }
+
+        function drawSnowflakes() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "white";
+            ctx.beginPath();
+            for (let flake of snowflakes) {
+                ctx.moveTo(flake.x, flake.y);
+                ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
+            }
+            ctx.fill();
+            updateSnowflakes();
+        }
+
+        function updateSnowflakes() {
+            for (let flake of snowflakes) {
+                flake.y += flake.speedY;
+                flake.x += flake.speedX;
+                if (flake.y > canvas.height) {
+                    flake.y = 0;
+                    flake.x = Math.random() * canvas.width;
+                }
+            }
+        }
+
+        function animateSnowfall() {
+            drawSnowflakes();
+            requestAnimationFrame(animateSnowfall);
+        }
+
+        createSnowflakes();
+        animateSnowfall();
+
+        window.addEventListener("resize", () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            snowflakes.length = 0;
+            createSnowflakes();
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
