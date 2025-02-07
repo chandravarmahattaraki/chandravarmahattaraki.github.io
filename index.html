@@ -19,9 +19,13 @@
             text-decoration: none;
             color: inherit;
         }
-            #snowCanvas {
+
+        /* Snow fall Styles */
+        #snowCanvas {
             position: fixed;
             top: -10px;
+            left: 0;
+            right: 0;
             color: white;
             opacity: 0.4; /* Reduced brightness */
             font-size: 10px;
@@ -29,6 +33,7 @@
             animation-name: snowfall;
             animation-timing-function: linear;
             animation-iteration-count: infinite;
+            z-index: 0; /* Ensure it's behind other content */
         }
 
        /* Navbar Styles */
@@ -99,7 +104,7 @@
             padding: 80px 20px;
         }
 
-        /* Middle Section css code */
+       
         /* Middle Section css code */
         .middle-section {
             position: relative;
@@ -147,11 +152,13 @@
         .services {
             padding: 10px 20px;
             text-align: center;
+            
         }
 
         .services h2 {
             font-size: 36px;
             margin-bottom: 40px;
+            
         }
 
         .service-cards {
@@ -159,6 +166,7 @@
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
+            
         }
 
         .service-card {
@@ -169,10 +177,12 @@
             padding: 20px;
             text-align: left;
             transition: transform 0.3s ease;
+            z-index: 1000;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
+            z-index: 1000;
         }
 
         .service-card h3 {
@@ -307,7 +317,7 @@
         <p>&copy; My Website. All rights reserved.</p>
     </footer>
     
-    <!-- Snow falling effect -->
+    <!-- Snow falling script effect -->
     <canvas id="snowCanvas"></canvas>
     <script>
         const canvas = document.getElementById("snowCanvas");
