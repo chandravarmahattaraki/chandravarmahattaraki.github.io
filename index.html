@@ -258,35 +258,36 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Blog Section -->
     <section class="services">
-        <h2>Services</h2>
+        <h2>My Blogs & Projects</h2>
         <div class="service-cards">
             <div class="service-card">
-                <h3>Network Pentesting</h3>
-                <p>Our Network Pentesting service helps identify and mitigate vulnerabilities in your network infrastructure. We perform comprehensive assessments, including testing for unauthorized access, misconfigurations, and security weaknesses that could expose your organization to cyber threats.</p>
+                <a href="https://medium.com/@Chandravarma.Hattaraki/automating-bug-bounty-with-python-ca146dcc5a9d"><h3><u>Automating Bug Bounty with Python</u></h3></a>
+                <p>In the world of cybersecurity, bug bounty programs offer a unique opportunity for ethical hackers to find vulnerabilities in organizations’ systems. One of the most critical phases of a bug bounty hunt is reconnaissance, where we gather as much information as possible about the target. In this blog, we’ll explore a Python-based script designed to automate various reconnaissance tasks and finding vulnerebility, making your bug bounty engagement more efficient and systematic.</p>
             </div>
             <div class="service-card">
-                <h3>Web Application Pentesting</h3>
-                <p>Our Web Application Pentesting service focuses on discovering security flaws in your web applications. We test for common vulnerabilities such as SQL-Injecstion, XSS based on OWASP Top 10 Checklist, ensuring your web applications are secure from malicious attacks.</p>
+                <a href="https://medium.com/@Chandravarma.Hattaraki/python-script-to-check-malicious-scores-using-virustotal-55f94314da26"><h3><u>Python Script to Check Malicious Scores using VirusTotal</u></h3></a>
+                <p>Leveraging the VirusTotal API to check malicious scores for IP addresses and file hashes, this blog post will explore how to efficiently use the API for bulk data analysis, thereby streamlining your threat detection process.</p>
             </div>
             <div class="service-card">
-                <h3>Application Pentesting</h3>
-                <p>We provide in-depth security assessments for mobile applications. Our Application Pentesting service identifies vulnerabilities that could compromise the functionality, integrity, and data security of your software, helping you build more secure and resilient applications.</p>
+                <a href="https://medium.com/@Chandravarma.Hattaraki/sumologic-auto-collector-management-python-script-a65d2ae9e693"><h3><u>Sumo Logic Auto Collector Management Python Script</u></h3></a>
+                <p>The Sumo Logic Auto Collector Management Python script is designed to interact with the Sumo Logic API to manage auto collectors, including configuring new collectors and retrieving information about existing ones</p>
             </div>
             <div class="service-card">
-                <h3>Cloud Pentesting</h3>
-                <p>With Cloud Pentesting, we assess the security of your cloud infrastructure, services, and configurations. We help uncover potential risks such as misconfigured cloud settings, insufficient encryption, and exposure of sensitive data, ensuring your cloud environments are secure and compliant.</p>
+                <a href="https://medium.com/@Chandravarma.Hattaraki/sql-injection-1ce2ec1fb6bd"><h3><u>SQL Injection</u></h3></a>
+                <p>In this section, we’ll explain what SQL injection is, describe some common examples, explain how to find and exploit various kinds of SQL injection vulnerabilities, and summarize how to prevent SQL injection.</p>
             </div>
         </div>
     </section>
-    <!-- contact us Section-->
-    <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 30px;"><h2>Contact us</h2></div>
-    <section class="social-media-icons" id="contact-us"></section>
+    <!-- Bug bounty Section-->
+    <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 30px;"><h2>My Bug Bounty Reports</h2></div>
+    <section class="Bug-bounty" id="Bug-bounty-id"></section>
         <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 30px;">
-            <input type="email" id="email" placeholder="Enter your email" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;" required>
-            <input type="text" id="message" placeholder="Enter your Message" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;" required>
-            <button onclick="submitForm()" style="padding: 10px 20px; background-color: #0073e6; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Submit</button>
+            <div class="service-card">
+                <a href="https://www.linkedin.com/posts/chandravarmahattaraki_bugbounty-cybersecurity-ethicalhacking-activity-7293336540057899008-HIrW?utm_source=share&utm_medium=member_android"><h3><u>SSRF Vulnerebility in Xmlrpc.php</u></h3></a>
+                <p>I've successfully reported my first security vulnerability in a bug bounty program—an Unauthenticated Blind SSRF! Unauthenticated Blind SSRF (Server-Side Request Forgery) occurs when an attacker can manipulate a server to make unintended requests to internal or external resources without authentication. Since it’s blind, the attacker doesn’t directly see the response but can infer details through time delays, error messages,or out-of-band interactions</p>
+            </div>
         </div>
     </section>
 
@@ -295,27 +296,7 @@
         <p>&copy; My Website. All rights reserved.</p>
     </footer>
 
-<!-- Script Section-->
-    <!-- contact button redirection to contact-us section-->
-    <script>
-        document.getElementById('contact-link').addEventListener('mouseenter', function() {
-            document.getElementById('contact-us').scrollIntoView({ behavior: 'smooth' });
-        });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
-    <!-- redirecting to  middle section -->
-    <script>
-        function submitForm() {
-          // Show the message
-          alert("Please reach us on social media. Contact option is not available right now.");
-      
-          // Redirect or scroll to the middle-section class
-          const middleSection = document.querySelector('.middle-section');
-          if (middleSection) {
-            middleSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      </script>
 </body>
 </html>
