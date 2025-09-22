@@ -224,7 +224,10 @@
             padding: 20px;
             margin-top: 50px;
         }
-        
+		.search-container {
+		    position: relative;
+		    z-index: 10;   /* bigger than the canvas */
+		}        
     </style>
 
 </head>
@@ -252,7 +255,22 @@
         </ul>
         <div id="clock"></div>
     </nav>
-
+	<!-- Google Search Box -->
+	<div class="search-container" style="text-align:center; margin:40px 0; position:relative; z-index:10;">
+	 	 <form action="https://www.google.com/search" method="get" target="_blank" class="d-flex justify-content-center">
+	   		 <input
+		     	 type="text"
+			      name="q"
+			      class="form-control"
+			      placeholder="Search on Google..."
+			      style="max-width:300px; border-radius:25px; margin-right:10px;"
+			      required
+		    >
+			 <button type="submit" class="btn btn-primary" style="border-radius:25px;">
+				 Search
+			 </button>
+		</form>
+	</div>
     
     <!-- Middle Section html code -->
     <section class="middle-section">
