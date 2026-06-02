@@ -1,219 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Contact us through our Website</title>
+
     <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    /* =========================
+       GENERAL STYLES
+    ========================= */
 
-       /* Navbar Styles */
-        .navbar {
-            background-color: #000000;
-            color: rgb(7, 7, 7);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: center; /* Center the logo */
-            align-items: center;
-            position: relative; /* Allows absolute positioning inside */
-            z-index: 1000;
-        }
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        .navbar .logo img {
-            width: 80px; /* Adjust the width as needed */
-            height: 80px; /* Set the height same as width to maintain a square shape */
-            border-radius: 50%; /* Makes the image round */
-            object-fit: cover; /* Ensures the image fits the circular shape */
-        }
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                overflow-x: hidden;
+            }
 
-        /* Hamburger Menu Styles */
-        .nav-links {
-            position: absolute;
-            left: 20px; /* Position the hamburger menu on the left */
-        }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
 
-        .hamburger {
-            cursor: pointer;
-        }
+            /* =========================
+            MODERN NAVBAR
+            ========================= */
 
-        .hamburger-dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #333;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            z-index: 10;
-        }
+            .navbar {
 
-        .hamburger-dropdown a {
-            display: block;
-            padding: 20px;
-            color: white;
-            text-decoration: none;
-        }
+                background-color: #000;
 
-        .hamburger-dropdown a:hover {
-            color: #0073e6;
-        }
+                padding: 15px 30px;
 
-        /* Show dropdown when hovering over the hamburger */
-        li:hover .hamburger-dropdown {
-            display: block;
-        }
-        
-        
-        /* Hero Section */ 
-        .hero {
-            background-color: rgb(29, 15, 15);
-            width: 100%; /* Full width */
-            height: 30vh; /* Full viewport height */
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            overflow: hidden;
-        }
+                display: grid;
 
-        .hero img {
-            width: 100%;
-            height: auto;
-            object-fit: cover; /* Ensures the image covers the full container */
-            z-index: 0;
-        }
+                grid-template-columns: 1fr auto 1fr;
 
-        /* Services Section */
-        .services {
-            padding: 10px 20px;
-            text-align: center;
-        }
+                align-items: center;
 
-        .services h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
+                width: 100%;
 
-        .service-cards {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+                position: sticky;
+                top: 0;
 
-        .service-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            padding: 20px;
-            text-align: left;
-            transition: transform 0.3s ease;
-        }
+                z-index: 1000;
+            }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
+            /* LOGO */
 
-        .service-card h3 {
-            font-size: 24px;
-            margin: 20px 0 10px;
-        }
+            .logo {
+                justify-self: start;
+            }
 
-        .service-card p {
-            font-size: 16px;
-            color: #666;
-        }
+            .logo img {
 
-        /* Footer */
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-        }
-         /* Footer */
-         .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-        }
+                width: 80px;
+                height: 80px;
+
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            /* MENU WRAPPER */
+
+            .top-menu-wrapper {
+
+                justify-self: center;
+
+                display: flex;
+                align-items: center;
+
+                gap: 25px;
+
+                background: rgba(255,255,255,0.08);
+
+                border: 1px solid rgba(255,255,255,0.1);
+
+                backdrop-filter: blur(10px);
+
+                padding: 15px 30px;
+
+                border-radius: 60px;
+
+                box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            }
+
+            /* MENU */
+
+            .top-menu {
+
+                display: flex;
+                align-items: center;
+
+                gap: 30px;
+            }
+
+            /* MENU LINKS */
+
+            .top-menu a {
+
+                color: white;
+
+                font-size: 18px;
+                font-weight: 500;
+
+                transition: 0.3s ease;
+
+                position: relative;
+
+                white-space: nowrap;
+            }
+
+            /* HOVER EFFECT */
+
+            .top-menu a:hover {
+                color: #00bfff;
+            }
+
+            /* UNDERLINE EFFECT */
+
+            .top-menu a::after {
+
+                content: "";
+
+                position: absolute;
+
+                left: 0;
+                bottom: -6px;
+
+                width: 0%;
+                height: 2px;
+
+                background: #00bfff;
+
+                transition: 0.3s;
+            }
+
+            .top-menu a:hover::after {
+                width: 100%;
+            }
+
+            /* CLOCK */
+
+            #clock {
+                position: absolute;
+                right: -500px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: white;
+
+                font-size: 16px;
+                font-weight: bold;
+
+                white-space: nowrap;
+            }
+
+            /* =========================
+            HERO SECTION
+            ========================= */
+
+            .hero {
+
+                background-color: rgb(29, 15, 15);
+
+                width: 100%;
+                height: 30vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                overflow: hidden;
+            }
+
+            .hero img {
+
+                width: 100%;
+                height: auto;
+
+                object-fit: cover;
+
+                z-index: 0;
+            }
+
+            /* =========================
+            SERVICES SECTION
+            ========================= */
+
+            .services {
+
+                padding: 10px 20px;
+
+                text-align: center;
+            }
+
+            .services h2 {
+
+                font-size: 36px;
+
+                margin-bottom: 40px;
+            }
+
+            .service-cards {
+
+                display: flex;
+                justify-content: center;
+
+                gap: 20px;
+
+                flex-wrap: wrap;
+            }
+
+            .service-card {
+
+                background-color: white;
+
+                border-radius: 10px;
+
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+                width: 300px;
+
+                padding: 20px;
+
+                text-align: left;
+
+                transition: transform 0.3s ease;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+            }
+
+            .service-card h3 {
+
+                font-size: 24px;
+
+                margin: 20px 0 10px;
+            }
+
+            .service-card p {
+
+                font-size: 16px;
+
+                color: #666;
+            }
+
+            /* =========================
+            FOOTER
+            ========================= */
+
+            .footer {
+
+                background-color: #333;
+
+                color: white;
+
+                text-align: center;
+
+                padding: 20px;
+
+                margin-top: 50px;
+            }
+
+           /* =========================
+            RESPONSIVE
+            ========================= */
+
+            @media screen and (max-width: 950px) {
+
+                .navbar {
+
+                    flex-direction: column;
+
+                    gap: 20px;
+
+                    position: relative;
+                }
+
+                .top-menu-wrapper {
+
+                    flex-direction: column;
+
+                    width: 100%;
+
+                    border-radius: 25px;
+
+                    padding: 20px;
+
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .top-menu {
+
+                    justify-content: center;
+
+                    gap: 20px;
+
+                    width: 100%;
+                }
+
+                /* MOBILE CLOCK FIX */
+
+                #clock {
+
+                    position: static;
+
+                    transform: none;
+
+                    margin-top: 10px;
+
+                    text-align: center;
+                }
+            }
+
     </style>
 
 </head>
+
 <body>
-    <!-- Navbar -->
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
     <nav class="navbar">
+
+        <!-- LOGO -->
+
         <div class="logo">
-            <a href="https://chandravarmahattaraki.github.io" target="_blank"><img src="https://github.com/chandravarmahattaraki/cv/blob/main/Images/Cv_logi.jpg?raw=true" alt="CV"></a>
+
+            <a href="https://chandravarmahattaraki.github.io" target="_blank">
+
+                <img src="https://github.com/chandravarmahattaraki/cv/blob/main/Images/Cv_logi.jpg?raw=true" alt="CV">
+
+            </a>
+
         </div>
-        <ul class="nav-links">
-            <li>
-                <div class="hamburger" id="hamburger-menu">
-                    <!-- Menu Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="white"/>
-                    </svg>
-                </div>
-                <div class="hamburger-dropdown">
-                    <a href="https://chandravarmahattaraki.github.io">Home</a>
-                    <a href="https://chandravarmahattaraki.github.io/services.html">Services</a>
-                    <a href="https://chandravarmahattaraki.github.io/">About</a>
-                    <a href="https://chandravarmahattaraki.github.io/Contact-us.html">Contact us</a>
-                </div>
-            </li>
-        </ul>
+
+        <!-- MENU -->
+
+        <div class="top-menu-wrapper">
+
+            <div class="top-menu">
+
+                <a href="https://chandravarmahattaraki.github.io">
+                    Home
+                </a>
+
+                <a href="https://chandravarmahattaraki.github.io/services.html">
+                    Services
+                </a>
+
+                <a href="https://chandravarmahattaraki.github.io/">
+                    About
+                </a>
+
+                <a href="https://chandravarmahattaraki.github.io/Contact-us.html">
+                    Contact Us
+                </a>
+
+            </div>
+
+            <!-- CLOCK -->
+
+            <div id="clock"></div>
+
+        </div>
+
     </nav>
-    
-     <!-- Hero Section -->
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
     <section class="hero">
+
         <img src="https://github.com/chandravarmahattaraki/cv/blob/main/Images/chandravarma_name_log.jpeg?raw=true" alt="Hero Image">
+
     </section>
 
-     <!-- Services Section -->
-     <section class="services">
+    <!-- =========================
+         SERVICES SECTION
+    ========================== -->
+
+    <section class="services">
+
         <h2>Services</h2>
+
         <div class="service-cards">
+
             <div class="service-card">
+
                 <h3>Network Pentesting</h3>
-                <p>Our Network Pentesting service helps identify and mitigate vulnerabilities in your network infrastructure. We perform comprehensive assessments, including testing for unauthorized access, misconfigurations, and security weaknesses that could expose your organization to cyber threats.</p>
+
+                <p>
+                    Our Network Pentesting service helps identify and mitigate vulnerabilities in your network infrastructure. We perform comprehensive assessments, including testing for unauthorized access, misconfigurations, and security weaknesses that could expose your organization to cyber threats.
+                </p>
+
             </div>
+
             <div class="service-card">
+
                 <h3>Web Application Pentesting</h3>
-                <p>Our Web Application Pentesting service focuses on discovering security flaws in your web applications. We test for common vulnerabilities such as SQL-Injecstion, XSS based on OWASP Top 10 Checklist, ensuring your web applications are secure from malicious attacks.</p>
+
+                <p>
+                    Our Web Application Pentesting service focuses on discovering security flaws in your web applications. We test for common vulnerabilities such as SQL-Injecstion, XSS based on OWASP Top 10 Checklist, ensuring your web applications are secure from malicious attacks.
+                </p>
+
             </div>
+
             <div class="service-card">
+
                 <h3>Application Pentesting</h3>
-                <p>We provide in-depth security assessments for mobile applications. Our Application Pentesting service identifies vulnerabilities that could compromise the functionality, integrity, and data security of your software, helping you build more secure and resilient applications.</p>
+
+                <p>
+                    We provide in-depth security assessments for mobile applications. Our Application Pentesting service identifies vulnerabilities that could compromise the functionality, integrity, and data security of your software, helping you build more secure and resilient applications.
+                </p>
+
             </div>
+
             <div class="service-card">
+
                 <h3>Cloud Pentesting</h3>
-                <p>With Cloud Pentesting, we assess the security of your cloud infrastructure, services, and configurations. We help uncover potential risks such as misconfigured cloud settings, insufficient encryption, and exposure of sensitive data, ensuring your cloud environments are secure and compliant.</p>
+
+                <p>
+                    With Cloud Pentesting, we assess the security of your cloud infrastructure, services, and configurations. We help uncover potential risks such as misconfigured cloud settings, insufficient encryption, and exposure of sensitive data, ensuring your cloud environments are secure and compliant.
+                </p>
+
             </div>
+
         </div>
+
     </section>
-     <!-- Footer -->
-     <footer class="footer">
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
         <p>&copy; My Website. All rights reserved.</p>
+
     </footer>
-    <!-- Buy me cup of coffee -->
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="chandravarma.hattaraki" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+    <!-- =========================
+         BUY ME COFFEE
+    ========================== -->
+
+    <script 
+        data-name="BMC-Widget"
+        data-cfasync="false"
+        src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+        data-id="chandravarma.hattaraki"
+        data-description="Support me on Buy me a coffee!"
+        data-message=""
+        data-color="#5F7FFF"
+        data-position="Right"
+        data-x_margin="18"
+        data-y_margin="18">
+    </script>
+
+    <!-- =========================
+         CLOCK SCRIPT
+    ========================== -->
+
+    <script>
+
+        function updateClock() {
+
+            const now = new Date();
+
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            document.getElementById("clock").textContent =
+                `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+
+        updateClock();
+
+    </script>
+
 </body>
 </html>
-
