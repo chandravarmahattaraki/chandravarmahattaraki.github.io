@@ -11,21 +11,16 @@
 
     <style>
 
-    /* =========================
-       GENERAL STYLES
-    ========================= */
-
-            *{
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+            /* =========================
+            GENERAL STYLES
+            ========================= */
 
             body {
                 font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                background-color: #080808;
                 color: #333;
-                overflow-x: hidden;
             }
 
             a {
@@ -34,76 +29,76 @@
             }
 
             /* =========================
-            MODERN NAVBAR
+            SNOW FALL STYLES
+            ========================= */
+
+            #snowCanvas {
+                position: fixed;
+                top: -10px;
+                left: 0;
+                right: 0;
+                color: white;
+                opacity: 0.4;
+                font-size: 10px;
+                user-select: none;
+                animation-name: snowfall;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                z-index: 0;
+            }
+
+            /* =========================
+            UPDATED MODERN NAVBAR
             ========================= */
 
             .navbar {
+                background-color: #000000;
+                padding: 15px 40px;
 
-                background-color: #000;
-
-                padding: 15px 30px;
-
-                display: grid;
-
-                grid-template-columns: 1fr auto 1fr;
-
+                display: flex;
                 align-items: center;
-
-                width: 100%;
+                justify-content: space-between;
 
                 position: sticky;
                 top: 0;
-
                 z-index: 1000;
             }
 
             /* LOGO */
 
-            .logo {
-                justify-self: start;
-            }
-
             .logo img {
-
                 width: 80px;
                 height: 80px;
-
                 border-radius: 50%;
                 object-fit: cover;
             }
 
-            /* MENU WRAPPER */
-
-            .top-menu-wrapper {
-
-                justify-self: center;
-
-                display: flex;
-                align-items: center;
-
-                gap: 25px;
-
-                background: rgba(255,255,255,0.08);
-
-                border: 1px solid rgba(255,255,255,0.1);
-
-                backdrop-filter: blur(10px);
-
-                padding: 15px 30px;
-
-                border-radius: 60px;
-
-                box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-            }
-
-            /* MENU */
+            /* TOP MENU */
 
             .top-menu {
 
+                background: rgba(255,255,255,0.08);
+
+                backdrop-filter: blur(12px);
+
+                border: 1px solid rgba(255,255,255,0.1);
+
+                border-radius: 60px;
+
+                padding: 18px 50px;
+
                 display: flex;
                 align-items: center;
+                justify-content: center;
 
-                gap: 30px;
+                gap: 50px;
+
+                margin-left: auto;
+                margin-right: auto;
+
+                min-width: 650px;
+
+                box-shadow: 0 4px 20px rgba(0,0,0,0.4);
             }
 
             /* MENU LINKS */
@@ -113,6 +108,7 @@
                 color: white;
 
                 font-size: 18px;
+
                 font-weight: 500;
 
                 transition: 0.3s ease;
@@ -137,9 +133,11 @@
                 position: absolute;
 
                 left: 0;
+
                 bottom: -6px;
 
                 width: 0%;
+
                 height: 2px;
 
                 background: #00bfff;
@@ -154,44 +152,179 @@
             /* CLOCK */
 
             #clock {
-                position: absolute;
-                right: -500px;
-                top: 50%;
-                transform: translateY(-50%);
+
                 color: white;
 
                 font-size: 16px;
+
                 font-weight: bold;
 
-                white-space: nowrap;
+                min-width: 90px;
+
+                text-align: right;
             }
 
             /* =========================
-            HERO SECTION
+            RESPONSIVE NAVBAR
             ========================= */
 
-            .hero {
+            @media screen and (max-width: 900px) {
 
-                background-color: rgb(29, 15, 15);
+                .navbar {
 
-                width: 100%;
-                height: 30vh;
+                    flex-direction: column;
 
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                    gap: 20px;
+                }
 
-                overflow: hidden;
+                .top-menu {
+
+                    min-width: auto;
+
+                    width: 100%;
+
+                    flex-wrap: wrap;
+
+                    justify-content: center;
+
+                    gap: 20px;
+
+                    padding: 15px 20px;
+                }
+
+                #clock {
+
+                    text-align: center;
+                }
             }
 
-            .hero img {
+            /* =========================
+            MIDDLE SECTION
+            ========================= */
 
-                width: 100%;
-                height: auto;
+            .middle-section {
+
+                display: flex;
+
+                flex-direction: row;
+
+                align-items: center;
+
+                justify-content: space-between;
+
+                text-align: left;
+
+                padding: 40px;
+
+                color: #c7dcf1;
+            }
+
+            /* CONTENT */
+
+            .overlay-content {
+
+                flex: 1;
+
+                max-width: 50%;
+
+                z-index: 10;
+            }
+
+            /* PROFILE IMAGE */
+
+            .profile-image {
+
+                width: 400px;
+
+                height: 400px;
+
+                border-radius: 50%;
 
                 object-fit: cover;
 
-                z-index: 0;
+                margin-left: 20px;
+
+                position: relative;
+
+                border: 5px solid #0f0;
+
+                box-shadow:
+                    0 0 15px #0f0,
+                    0 0 30px #0f0,
+                    0 0 45px #0f0;
+
+                animation: matrixCodeEffect 3s infinite alternate;
+            }
+
+            @keyframes matrixCodeEffect {
+
+                0% {
+                    border-color: rgb(0, 68, 255);
+
+                    box-shadow:
+                        0 0 10px rgb(0, 60, 255),
+                        0 0 20px rgb(0, 132, 255);
+                }
+
+                50% {
+
+                    border-color: #0ff;
+
+                    box-shadow:
+                        0 0 20px #0ff,
+                        0 0 30px #0ff;
+                }
+
+                100% {
+
+                    border-color: rgb(255, 72, 0);
+
+                    box-shadow:
+                        0 0 10px rgb(255, 17, 0),
+                        0 0 20px rgb(255, 17, 0);
+                }
+            }
+
+            /* =========================
+            RESPONSIVE MIDDLE SECTION
+            ========================= */
+
+            @media screen and (max-width: 768px) {
+
+                .middle-section {
+
+                    flex-direction: column;
+
+                    text-align: center;
+
+                    align-items: center;
+                }
+
+                .overlay-content {
+
+                    max-width: 90%;
+                }
+
+                .profile-image {
+
+                    margin: 20px 0;
+
+                    width: 150px;
+
+                    height: 150px;
+                }
+            }
+
+            /* IPAD RESPONSIVE */
+
+            @media screen and (min-width: 769px) and (max-width: 1024px) {
+
+                .profile-image {
+
+                    width: 300px;
+
+                    height: 300px;
+                }
             }
 
             /* =========================
@@ -210,11 +343,14 @@
                 font-size: 36px;
 
                 margin-bottom: 40px;
+
+                color: white;
             }
 
             .service-cards {
 
                 display: flex;
+
                 justify-content: center;
 
                 gap: 20px;
@@ -228,7 +364,7 @@
 
                 border-radius: 10px;
 
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
                 width: 300px;
 
@@ -237,10 +373,15 @@
                 text-align: left;
 
                 transition: transform 0.3s ease;
+
+                z-index: 1000;
             }
 
             .service-card:hover {
+
                 transform: translateY(-10px);
+
+                z-index: 1000;
             }
 
             .service-card h3 {
@@ -274,56 +415,15 @@
                 margin-top: 50px;
             }
 
-           /* =========================
-            RESPONSIVE
+            /* =========================
+            SEARCH CONTAINER
             ========================= */
 
-            @media screen and (max-width: 950px) {
+            .search-container {
 
-                .navbar {
+                position: relative;
 
-                    flex-direction: column;
-
-                    gap: 20px;
-
-                    position: relative;
-                }
-
-                .top-menu-wrapper {
-
-                    flex-direction: column;
-
-                    width: 100%;
-
-                    border-radius: 25px;
-
-                    padding: 20px;
-
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                .top-menu {
-
-                    justify-content: center;
-
-                    gap: 20px;
-
-                    width: 100%;
-                }
-
-                /* MOBILE CLOCK FIX */
-
-                #clock {
-
-                    position: static;
-
-                    transform: none;
-
-                    margin-top: 10px;
-
-                    text-align: center;
-                }
+                z-index: 10;
             }
 
     </style>
@@ -351,8 +451,6 @@
         </div>
 
         <!-- MENU -->
-
-        <div class="top-menu-wrapper">
 
             <div class="top-menu">
 
@@ -384,13 +482,13 @@
 
     <!-- =========================
          HERO SECTION
-    ========================== -->
-
+    
     <section class="hero">
 
         <img src="https://github.com/chandravarmahattaraki/cv/blob/main/Images/chandravarma_name_log.jpeg?raw=true" alt="Hero Image">
 
     </section>
+    ========================== -->
 
     <!-- =========================
          SERVICES SECTION
