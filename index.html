@@ -329,68 +329,98 @@
             ========================= */
 
             .services {
-
                 padding: 10px 20px;
-
                 text-align: center;
+                position: relative;
+                z-index: 10;
+                overflow: visible;
             }
 
             .services h2 {
-
                 font-size: 36px;
-
                 margin-bottom: 40px;
-
                 color: white;
             }
 
             .service-cards {
-
                 display: flex;
-
                 justify-content: center;
-
                 gap: 20px;
-
                 flex-wrap: wrap;
+                position: relative;
+                overflow: visible;
             }
 
             .service-card {
-
                 background-color: white;
-
-                border-radius: 10px;
-
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+                border-radius: 12px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
                 width: 300px;
-
                 padding: 20px;
-
                 text-align: left;
-
-                transition: transform 0.3s ease;
+                transition: transform 0.3s ease,
+                            box-shadow 0.3s ease;
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
             }
 
             .service-card:hover {
-
                 transform: translateY(-10px);
-
+                box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
                 z-index: 1000;
             }
 
             .service-card h3 {
-
                 font-size: 24px;
-
                 margin: 20px 0 10px;
+                color: #111;
             }
 
             .service-card p {
-
                 font-size: 16px;
-
                 color: #666;
+                line-height: 1.6;
+            }
+
+            /* Full clickable link */
+            .card-link {
+                text-decoration: none;
+                color: inherit;
+                display: block;
+            }
+
+            .card-link:hover h3 {
+                color: #0077b5;
+            }
+
+            /* Mobile Responsive */
+            @media screen and (max-width: 768px) {
+
+                .services {
+                    padding: 20px 10px;
+                }
+
+                .services h2 {
+                    font-size: 28px;
+                }
+
+                .service-cards {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .service-card {
+                    width: 90%;
+                }
+
+                .service-card h3 {
+                    font-size: 20px;
+                }
+
+                .service-card p {
+                    font-size: 14px;
+                }
             }
 
             /* =========================
@@ -528,6 +558,19 @@
         </div>
         <img class="profile-image" src="https://github.com/chandravarmahattaraki/chandravarmahattaraki.github.io/blob/main/Images/Official_blazer.png?raw=true" alt="Hero Image">
     </section>
+
+    <!-- Award Section -->
+    <section class="services">
+        <h2>Awards</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <a href="https://www.linkedin.com/posts/chandravarmahattaraki_bugbounty-cybersecurity-ethicalhacking-activity-7293336540057899008-HIrW?utm_source=share&utm_medium=member_android"><h3><u>SSRF Vulnerebility in Xmlrpc.php</u></h3></a>
+                <p>I've successfully reported my first security vulnerability in a bug bounty program—an Unauthenticated Blind SSRF! Unauthenticated Blind SSRF (Server-Side Request Forgery) occurs when an attacker can manipulate a server to make unintended requests to internal or external resources without authentication. Since it’s blind, the attacker doesn’t directly see the response but can infer details through time delays, error messages,or out-of-band interactions</p>
+            </div>
+        </div>
+        
+    </section>
+
 
     <!-- Blog Section -->
     <section class="services">
